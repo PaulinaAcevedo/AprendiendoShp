@@ -1,0 +1,433 @@
+# AprendiendoShp
+using System;
+
+namespace Holamundo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hola mundo!");
+            Console.ReadLine();
+        }
+    }
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+using System;
+namespace Conversiones
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {//ToString sirve para mostrar la representacion string
+            //del tipo de dato(GetType())
+            //de la variable (numero)
+            string numero="1234";
+            Console.WriteLine(numero.GetType().ToString());
+            //Convierte el int y muestra el tipo
+            int intNumero = Convert.ToInt32(numero);
+            Console.WriteLine(intNumero.GetType().ToString());
+            //String.fromat hace marco substituciones
+            Console.WriteLine(String.Format("el numero es {0}", intNumero));
+            Console.ReadLine();
+
+        }
+    }
+}
+ 
+
+
+
+
+
+
+
+
+using System;
+
+namespace Aleatorios
+{
+    class Program
+    {//float Usar float para almacenar magnitudes físicas, por ejemplo, 
+            /*una medición del peso de un objeto. Aunque el float solo guarda del orden de unos
+             * 6 dígitos significativos*/
+        static public float numero1 = 24.5F;
+        static void Main(string[] args)     
+        { //Declaracion de variables
+            float numero2 = 0.0F;
+            //Valor aleatorio
+            Random numAleatorio = new Random();
+            numero2 = (float)numAleatorio.Next(1, 11);
+            Console.WriteLine(String.Format("la suma de {0} y {1} es {2} ", numero1, numero2, numero1 + numero2));
+            Console.ReadLine();
+
+        }
+    }
+}
+ 
+
+
+
+
+
+
+using System;
+
+namespace Entrada
+{
+    class Program
+    {
+        static void Main(string[] args)     
+        { //Declaracion de variable
+            string valor;
+            int receptora = 0;
+            Console.WriteLine("Escribe algo");
+            valor = Console.ReadLine();
+
+            if (int.TryParse(valor, out receptora))
+            {
+                Console.WriteLine(String.Format("Dato entero {0}. Muy bien!!", receptora));    
+             }
+                else
+	              {
+                    Console.WriteLine("El dato no es entero. Intentelo de nuevo");
+                }
+            //Pausa
+            Console.WriteLine("");
+            Console.WriteLine("Presione INTRO para comtinuar");
+            Console.ReadKey();
+
+        }
+    }
+}
+ 
+
+using System;
+using System.Text;
+
+namespace Nombre
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { //Declaracion de variable
+            string Nombre;
+            string Apellidos;
+            Console.WriteLine("\t\nIntroduce un Nombre:");
+            Nombre = Console.ReadLine();
+            Console.WriteLine("\t\nIntroduce los apellidos:");
+            Apellidos = Console.ReadLine();
+            //Mayusculas
+            Nombre = Nombre.ToUpper();
+            Apellidos = Apellidos.ToUpper();
+            //Anexa una copia de la cadena especificada seguida del terminador 
+            /*de línea predeterminado al final del objeto StringBuilder actual.*/
+            StringBuilder nombreCompleto = new StringBuilder(Nombre);
+            nombreCompleto.Append("  ");
+            nombreCompleto.Append("Apellidos");
+            Console.WriteLine(nombreCompleto);
+            //Pausa
+            Console.WriteLine();
+            Console.WriteLine("\t\nPresiona culquier tecla para terminar");
+            Console.ReadKey();
+        }
+    }
+}
+ 
+
+
+
+
+using System;
+
+namespace Tabla
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { //Declaracion de variable
+            string _numero;
+            int numero;
+            //Entrada
+            Console.WriteLine("\n\tDame un numero del 1 al 9");
+            _numero = Console.ReadLine();
+            numero = Convert.ToInt32(_numero);
+            //Ciclo
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(
+                    String.Format("{0} x{1}={2}", 
+                    numero,i,_numero*i));
+            }
+            //Pausa
+            Console.WriteLine();
+            Console.WriteLine("\n\tPresiona cualquier tecla para terminar");
+            Console.ReadKey();
+        }
+    }
+}
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Tablas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("");
+                Console.WriteLine(String.Format("Tabla del {0}: ",i ) );
+                Console.WriteLine();
+                //Se convinan variables de secuencia
+                for (int j = 1; j <= 10; j++)
+                {
+                    Console.WriteLine(String.Format("{0}x {1}={2}", i, j, i * j));
+                }
+            }
+            //Pausa
+            Console.WriteLine("");
+            Console.WriteLine("\n\tPresione cualquir tecla para terminar");
+            Console.ReadKey();
+        }
+    }
+}
+ 
+
+
+
+
+
+using System;
+
+namespace Compra
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string _numero1, _numero2;
+            int numero1, numero2;
+            Console.Write("Numero 1:");
+            _numero1 = Console.ReadLine();
+            Console.Write("Numero 2:");
+            _numero2 = Console.ReadLine();
+            numero1 = Convert.ToInt32(_numero1);
+            numero2 = Convert.ToInt32(_numero2);
+            if (numero1== numero2)
+            {
+                Console.WriteLine(String.Format("Numeros proporcionados{0} y {1}. {2}",
+                    numero1, numero2, "los numeros son iguales"));
+            }
+            else
+            {
+                if (numero1> numero2)
+                {
+                    Console.WriteLine(String.Format("Numeros proporcionados{0} y {1}. {2}",
+                    numero1, numero2, "El mayor es el primero"));
+                }
+                else
+                {
+                    Console.WriteLine(String.Format("Numeros proporcionados{0} y {1}. {2}",
+                    numero1, numero2, "El mayor es el segundo"));
+                }
+            }
+
+            //Pausa
+            Console.WriteLine("");
+            Console.WriteLine("\n\tPresione cualquir tecla para terminar");
+            Console.ReadKey();
+        }
+    }
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Acumelado
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {//Declaracion de variables
+            string _numero;
+            int numero;
+            int acumulado = 0;
+            //Entrada
+            Console.WriteLine("Capture los enteros a acumular");
+            Console.WriteLine("Dejar vacio y dar INTRO, para salir");
+            Console.WriteLine();
+            //Ciclo while infinito
+            while (true)
+            {
+                Console.WriteLine("Dame un numero entero:");
+                _numero = Console.ReadLine();
+                if (_numero == "") 
+                {
+                    break;
+                }
+                else
+                {
+                    if (int.TryParse(_numero, out numero))
+                    {
+                        acumulado += numero;
+                        Console.WriteLine(String.Format("Monto acumulado: {0}", acumulado));
+                    }
+                    else
+                    {
+                        Console.WriteLine("El dato proporcionado no es un numero entero");
+                        Console.WriteLine("Intentalo de nuevo");
+                    }
+                }
+                
+            }
+
+
+            //Pausa
+            Console.WriteLine("");
+            Console.WriteLine("\n\tPresione cualquir tecla para terminar");
+            Console.ReadKey();
+        }
+    }
+}
+       
+
+
+
+
+
+
+
+    
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace multiplo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {//Declaracion de variables
+            string _numero;
+            int numero;
+            bool esMultiplo3, esMultiplo5, esMultiplo7;
+            //Entrada
+            try
+            {
+                Console.Write("Dame un numero entero");
+                _numero = Console.ReadLine();
+                numero = Convert.ToInt32(_numero);
+                //Si un nuemro tiene un residual de cerocon respecto a 
+                //un numero, es que es multiplo
+                esMultiplo3 = ((numero % 3) == 0);
+                esMultiplo5 = ((numero % 5) == 0);
+                esMultiplo7 = ((numero % 7) == 0);
+                //Multiplo de 3 y 5 al mismo tiempo es correcto, o multiplo de 7 correcto.
+                if ((esMultiplo3 & esMultiplo5) | esMultiplo7)
+                {
+                    Console.WriteLine("Correcto");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrecto");
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine("El dato proporcionado causa errores");
+                Console.WriteLine(e.Message);
+            }
+            finally
+            { }
+
+            //Pausa
+            Console.WriteLine("");
+            Console.WriteLine("\n\tPresione cualquir tecla para terminar");
+            Console.ReadKey();
+        
+            }
+        
+    }
+}
+        
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
